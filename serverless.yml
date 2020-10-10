@@ -1,0 +1,33 @@
+org: devingen
+app: devingen-io
+service: devingen-api
+
+frameworkVersion: '>=1.28.0 <2.0.0'
+
+provider:
+  name: aws
+  runtime: go1.x
+  environment:
+    MONGO_ADDRESS: ${param:MONGO_ADDRESS}
+    MONGO_USERNAME: ${param:MONGO_USERNAME}
+    MONGO_PASSWORD: ${param:MONGO_PASSWORD}
+
+package:
+  exclude:
+    - ./**
+  include:
+    - ./bin/**
+
+functions:
+
+  register:
+    handler: bin/register
+    events:
+      - http:
+          path: /{base}/register
+          method: post
+          cors: true
+          request:
+            parameters:
+              paths:
+                base: true
