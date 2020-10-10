@@ -17,6 +17,7 @@ func (service DatabaseService) WorkspaceOwnershipsCreate(base string, user *kiml
 		User:      user.DBRef(base),
 		Workspace: workspace.DBRef(base),
 	}
+	item.AddCreationFields()
 
 	result, err := collection.InsertOne(context.Background(), item)
 	if err != nil {

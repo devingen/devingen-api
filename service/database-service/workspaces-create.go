@@ -15,6 +15,7 @@ func (service DatabaseService) WorkspacesCreate(base, name string) (*model.Works
 	item := &model.Workspace{
 		Name: name,
 	}
+	item.AddCreationFields()
 
 	result, err := collection.InsertOne(context.Background(), item)
 	if err != nil {

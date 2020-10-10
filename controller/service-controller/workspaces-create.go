@@ -3,7 +3,7 @@ package service_controller
 import (
 	"context"
 	"github.com/devingen/api-core/dvnruntime"
-	"github.com/devingen/api-core/model"
+	coremodel "github.com/devingen/api-core/model"
 	"github.com/devingen/devingen-api/dto"
 	"github.com/devingen/kimlik-api/kimlikruntime"
 	"net/http"
@@ -17,13 +17,13 @@ func (controller ServiceController) CreateWorkspace(ctx context.Context, req dvn
 		return nil, 0, err
 	}
 
-	if body.Name == "" {
-		return nil, 0, model.NewError(http.StatusBadRequest, "name-missing")
-	}
-
 	user, err := controller.KimlikService.FindUserUserWithId(base, token.UserId)
 	if err != nil {
 		return nil, 0, err
+	}
+
+	if user == nil {
+		return nil, 0, coremodel.NewError(http.StatusInternalServerError, "user-not-found")
 	}
 
 	workspace, err := controller.Service.WorkspacesCreate(base, body.Name)

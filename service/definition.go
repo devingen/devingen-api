@@ -6,7 +6,7 @@ import (
 )
 
 type IDevingenService interface {
-	WorkspacesFindOfUser(base, userId string) ([]model.Workspace, error)
+	WorkspaceOwnershipsFindOfUser(base, userId string) ([]*model.WorkspaceOwnership, error)
 	WorkspacesCreate(base, name string) (*model.Workspace, error)
 	WorkspaceOwnershipsCreate(base string, user *kimlik_model.User, workspace *model.Workspace) (*model.WorkspaceOwnership, error)
 }
