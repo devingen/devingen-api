@@ -7,7 +7,7 @@ import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
-func (service DatabaseService) WorkspaceOwnershipsCreate(base string, user *kimlik_model.User, workspace *model.Workspace) (*model.WorkspaceOwnership, error) {
+func (service DatabaseService) CreateWorkspaceOwnership(base string, user *kimlik_model.User, workspace *model.Workspace) (*model.WorkspaceOwnership, error) {
 	collection, err := service.Database.ConnectToCollection(base, model.CollectionWorkspaceOwnerships)
 	if err != nil {
 		return nil, err

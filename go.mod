@@ -7,7 +7,7 @@ go 1.12
 //replace github.com/devingen/kimlik-api => ../kimlik-api
 
 require (
-	github.com/devingen/api-core v0.0.12
+	github.com/devingen/api-core v0.0.13
 	github.com/devingen/kimlik-api v0.0.4
 	github.com/gorilla/mux v1.7.4
 	go.mongodb.org/mongo-driver v1.3.2

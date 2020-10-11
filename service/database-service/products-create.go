@@ -7,15 +7,17 @@ import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
-func (service DatabaseService) CreateWorkspace(base, name string, createdBy *kimlik_model.User) (*model.Workspace, error) {
-	collection, err := service.Database.ConnectToCollection(base, model.CollectionWorkspaces)
+func (service DatabaseService) CreateProduct(base, name string, productType model.ProductType, workspace *model.Workspace, createdBy *kimlik_model.User) (*model.Product, error) {
+	collection, err := service.Database.ConnectToCollection(base, model.CollectionProducts)
 	if err != nil {
 		return nil, err
 	}
 
-	item := &model.Workspace{
+	item := &model.Product{
 		CreatedBy: createdBy.DBRef(base),
 		Name:      name,
+		Type:      productType,
+		Workspace: workspace.DBRef(base),
 	}
 	item.AddCreationFields()
 

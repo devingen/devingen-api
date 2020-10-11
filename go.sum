@@ -13,6 +13,8 @@ github.com/devingen/api-core v0.0.11 h1:+bIXpC9sfTGApBXmpbU78jvFZkEYy3xa0LkIM14P
 github.com/devingen/api-core v0.0.11/go.mod h1:q1y8jEOu21IS4aTdDB/L463V6vG9+uXK+TcedeAhr04=
 github.com/devingen/api-core v0.0.12 h1:PoK2080VynXuWP+RXr3hcCSMOpb5Hz/NU0H4egrr+pA=
 github.com/devingen/api-core v0.0.12/go.mod h1:q1y8jEOu21IS4aTdDB/L463V6vG9+uXK+TcedeAhr04=
+github.com/devingen/api-core v0.0.13 h1:aL76oNeHrl/tW6dSRNuzxmd6jDa+DO6bEDp+rL2QLOQ=
+github.com/devingen/api-core v0.0.13/go.mod h1:q1y8jEOu21IS4aTdDB/L463V6vG9+uXK+TcedeAhr04=
 github.com/devingen/kimlik-api v0.0.2/go.mod h1:zGY4W8assoNWHlzSepC+usZcr+C8r0ymG5G57pELSA4=
 github.com/devingen/kimlik-api v0.0.3 h1:qxjKckhAJLDXT/lDl/UEf0KZ/TYPMAO3zlpSs1jm3OE=
 github.com/devingen/kimlik-api v0.0.3/go.mod h1:zGY4W8assoNWHlzSepC+usZcr+C8r0ymG5G57pELSA4=

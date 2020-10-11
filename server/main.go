@@ -25,8 +25,11 @@ func main() {
 	serviceController := controller.NewServiceController(databaseService, kimlikService)
 
 	router := mux.NewRouter()
+	router.HandleFunc("/{base}/products", wrappers.WithLog(wrappers.WithAuth(serviceController.CreateProduct))).Methods(http.MethodPost)
+	router.HandleFunc("/{base}/products", wrappers.WithLog(wrappers.WithAuth(serviceController.GetProducts))).Methods(http.MethodGet)
+	router.HandleFunc("/{base}/products/{id}", wrappers.WithLog(wrappers.WithAuth(serviceController.GetProductWithId))).Methods(http.MethodGet)
 	router.HandleFunc("/{base}/workspaces", wrappers.WithLog(wrappers.WithAuth(serviceController.CreateWorkspace))).Methods(http.MethodPost)
-	router.HandleFunc("/{base}/workspaces", wrappers.WithLog(wrappers.WithAuth(serviceController.GetWorkspaces))).Methods(http.MethodGet)
+	router.HandleFunc("/{base}/workspace-ownerships", wrappers.WithLog(wrappers.WithAuth(serviceController.GetWorkspaceOwnerships))).Methods(http.MethodGet)
 
 	http.Handle("/", &server.CORSRouterDecorator{R: router})
 	err = http.ListenAndServe(":1002", &server.CORSRouterDecorator{R: router})

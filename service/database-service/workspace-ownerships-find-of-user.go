@@ -7,7 +7,7 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
-func (service DatabaseService) WorkspaceOwnershipsFindOfUser(base, userId string) ([]*model.WorkspaceOwnership, error) {
+func (service DatabaseService) FindWorkspaceOwnershipsOfUser(base, userId string) ([]*model.WorkspaceOwnership, error) {
 	id, err := primitive.ObjectIDFromHex(userId)
 	if err != nil {
 		return nil, err

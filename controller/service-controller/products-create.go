@@ -9,9 +9,9 @@ import (
 	"net/http"
 )
 
-func (controller ServiceController) CreateWorkspace(ctx context.Context, req dvnruntime.Request) (interface{}, int, error) {
+func (controller ServiceController) CreateProduct(ctx context.Context, req dvnruntime.Request) (interface{}, int, error) {
 
-	var body dto.CreateWorkspaceRequest
+	var body dto.CreateProductRequest
 	base, token, err := kimlikruntime.AssertAuthenticationAndBody(ctx, req, &body)
 	if err != nil {
 		return nil, 0, err
@@ -26,15 +26,19 @@ func (controller ServiceController) CreateWorkspace(ctx context.Context, req dvn
 		return nil, 0, coremodel.NewError(http.StatusInternalServerError, "user-not-found")
 	}
 
-	workspace, err := controller.Service.CreateWorkspace(base, body.Name, user)
+	workspace, err := controller.Service.FindWorkspaceWithId(base, body.WorkspaceId)
 	if err != nil {
 		return nil, 0, err
 	}
 
-	_, err = controller.Service.CreateWorkspaceOwnership(base, user, workspace)
+	if workspace == nil {
+		return nil, 0, coremodel.NewError(http.StatusBadRequest, "workspace-not-found")
+	}
+
+	product, err := controller.Service.CreateProduct(base, body.Name, body.Type, workspace, user)
 	if err != nil {
 		return nil, 0, err
 	}
 
-	return &workspace, http.StatusOK, err
+	return &product, http.StatusOK, err
 }

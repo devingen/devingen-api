@@ -6,7 +6,13 @@ import (
 	"time"
 )
 
-type WorkspaceOwnership struct {
+type ProductType string
+
+const (
+	ProductTypeDamga = "damga"
+)
+
+type Product struct {
 	// DBRef fields
 	Ref      string             `bson:"_ref,omitempty" json:"_ref,omitempty"`
 	ID       primitive.ObjectID `bson:"_id,omitempty" json:"_id,omitempty"`
@@ -17,22 +23,32 @@ type WorkspaceOwnership struct {
 	UpdatedAt *time.Time `json:"_updated,omitempty" bson:"_updated,omitempty"`
 	Revision  int        `json:"_revision,omitempty" bson:"_revision,omitempty"`
 
-	User      *model.User `json:"user,omitempty" bson:"user,omitempty"`
+	CreatedBy *model.User `json:"createdBy,omitempty" bson:"createdBy,omitempty"`
+	Name      string      `json:"name,omitempty" bson:"name,omitempty"`
+	Type      ProductType `json:"type,omitempty" bson:"type,omitempty"`
 	Workspace *Workspace  `json:"workspace,omitempty" bson:"workspace,omitempty"`
 }
 
-func (w *WorkspaceOwnership) AddCreationFields() {
-	w.ID = primitive.NewObjectID()
+func (p *Product) DBRef(database string) *Product {
+	return &Product{
+		Ref:      CollectionProducts,
+		ID:       p.ID,
+		Database: database,
+	}
+}
+
+func (p *Product) AddCreationFields() {
+	p.ID = primitive.NewObjectID()
 	now := time.Now()
-	w.CreatedAt = &now
-	w.UpdatedAt = &now
-	w.Revision = 1
+	p.CreatedAt = &now
+	p.UpdatedAt = &now
+	p.Revision = 1
 }
 
 // PrepareUpdateFields sets the UpdatedAt and deletes the Revision. Giving 0 value to Revision results bson
 // ignoring the revision field in $set function. It's incremented by the $inc command
-func (w *WorkspaceOwnership) PrepareUpdateFields() {
-	w.Revision = 0
+func (p *Product) PrepareUpdateFields() {
+	p.Revision = 0
 	now := time.Now()
-	w.UpdatedAt = &now
+	p.UpdatedAt = &now
 }
