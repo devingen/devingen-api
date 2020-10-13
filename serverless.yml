@@ -20,12 +20,61 @@ package:
 
 functions:
 
-  register:
-    handler: bin/register
+  create-product:
+    handler: bin/create-product
     events:
       - http:
-          path: /{base}/register
+          path: /{base}/products
           method: post
+          cors: true
+          request:
+            parameters:
+              paths:
+                base: true
+
+  get-products:
+    handler: bin/get-products
+    events:
+      - http:
+          path: /{base}/products
+          method: get
+          cors: true
+          request:
+            parameters:
+              paths:
+                base: true
+
+  get-product-with-id:
+    handler: bin/get-product-with-id
+    events:
+      - http:
+          path: /{base}/products/{id}
+          method: get
+          cors: true
+          request:
+            parameters:
+              paths:
+                base: true
+                id: true
+
+  create-workspace:
+    handler: bin/create-workspace
+    events:
+      - http:
+          path: /{base}/workspaces
+          method: post
+          cors: true
+          request:
+            parameters:
+              paths:
+                base: true
+
+  get-workspace-ownerships:
+    handler: bin/get-workspace-ownerships
+    events:
+      - http:
+          path: /{base}/workspace-ownerships
+          method: get
           cors: true
           request:
             parameters:

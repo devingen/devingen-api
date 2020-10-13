@@ -8,5 +8,5 @@ import (
 
 func main() {
 	serviceController := aws.GenerateController()
-	lambda.Start(kimlik_aws.GenerateHandler(serviceController.GetWorkspaces))
+	lambda.Start(kimlik_aws.GenerateHandler(serviceController.CreateProduct))
 }
