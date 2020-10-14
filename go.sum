@@ -20,6 +20,10 @@ github.com/devingen/kimlik-api v0.0.3 h1:qxjKckhAJLDXT/lDl/UEf0KZ/TYPMAO3zlpSs1j
 github.com/devingen/kimlik-api v0.0.3/go.mod h1:zGY4W8assoNWHlzSepC+usZcr+C8r0ymG5G57pELSA4=
 github.com/devingen/kimlik-api v0.0.4 h1:k3JWJux2lfBoq4U3xIo8WKSxiNstMa9NPbyKr86ZZvw=
 github.com/devingen/kimlik-api v0.0.4/go.mod h1:ujFtGIQ60yt5s0LuOAh229vpc2oT4/saV1xeUOuwLtU=
+github.com/devingen/kimlik-api v0.0.5 h1:X/MENTRNT/stM7VLOxfPf7adYoviwhOAAWxchdFCRS8=
+github.com/devingen/kimlik-api v0.0.5/go.mod h1:djlsIpCCa5xSXCob3u2kxOYfcgylYak8E1fGq65HxNs=
+github.com/devingen/kimlik-api v0.0.6 h1:q5rXlrIQve/k+NpTxljsWIQ5WQNLPMMGwqL/TxEoXMQ=
+github.com/devingen/kimlik-api v0.0.6/go.mod h1:djlsIpCCa5xSXCob3u2kxOYfcgylYak8E1fGq65HxNs=
 github.com/dgrijalva/jwt-go v3.2.0+incompatible h1:7qlOGliEKZXTDg6OTjfoBKDXWrumCAMpl/TFQ4/5kLM=
 github.com/dgrijalva/jwt-go v3.2.0+incompatible/go.mod h1:E3ru+11k8xSBh+hMPgOLZmtrrCbhqsmaPHjLKYnJCaQ=
 github.com/go-playground/assert/v2 v2.0.1/go.mod h1:VDjEfimB/XKnb+ZQfWdccd7VUvScMdVu0Titje2rxJ4=
