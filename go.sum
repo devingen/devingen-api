@@ -15,6 +15,8 @@ github.com/devingen/api-core v0.0.12 h1:PoK2080VynXuWP+RXr3hcCSMOpb5Hz/NU0H4egrr
 github.com/devingen/api-core v0.0.12/go.mod h1:q1y8jEOu21IS4aTdDB/L463V6vG9+uXK+TcedeAhr04=
 github.com/devingen/api-core v0.0.13 h1:aL76oNeHrl/tW6dSRNuzxmd6jDa+DO6bEDp+rL2QLOQ=
 github.com/devingen/api-core v0.0.13/go.mod h1:q1y8jEOu21IS4aTdDB/L463V6vG9+uXK+TcedeAhr04=
+github.com/devingen/api-core v0.0.18 h1:Od4SyEIh8oZKIUKJOr3ZmPyxc7lg1VKDAIZ17Qt9k4U=
+github.com/devingen/api-core v0.0.18/go.mod h1:q1y8jEOu21IS4aTdDB/L463V6vG9+uXK+TcedeAhr04=
 github.com/devingen/kimlik-api v0.0.2/go.mod h1:zGY4W8assoNWHlzSepC+usZcr+C8r0ymG5G57pELSA4=
 github.com/devingen/kimlik-api v0.0.3 h1:qxjKckhAJLDXT/lDl/UEf0KZ/TYPMAO3zlpSs1jm3OE=
 github.com/devingen/kimlik-api v0.0.3/go.mod h1:zGY4W8assoNWHlzSepC+usZcr+C8r0ymG5G57pELSA4=
@@ -24,6 +26,8 @@ github.com/devingen/kimlik-api v0.0.5 h1:X/MENTRNT/stM7VLOxfPf7adYoviwhOAAWxchdF
 github.com/devingen/kimlik-api v0.0.5/go.mod h1:djlsIpCCa5xSXCob3u2kxOYfcgylYak8E1fGq65HxNs=
 github.com/devingen/kimlik-api v0.0.6 h1:q5rXlrIQve/k+NpTxljsWIQ5WQNLPMMGwqL/TxEoXMQ=
 github.com/devingen/kimlik-api v0.0.6/go.mod h1:djlsIpCCa5xSXCob3u2kxOYfcgylYak8E1fGq65HxNs=
+github.com/devingen/kimlik-api v0.0.7 h1:N1MwxFyhzd/MrZV9crSfAUDUyGqLmRLDl5qm5Tlpt50=
+github.com/devingen/kimlik-api v0.0.7/go.mod h1:f6vkYfC3XnuZWrzaeg3iT+/ug0GFlHOzrm62DrPGz0k=
 github.com/dgrijalva/jwt-go v3.2.0+incompatible h1:7qlOGliEKZXTDg6OTjfoBKDXWrumCAMpl/TFQ4/5kLM=
 github.com/dgrijalva/jwt-go v3.2.0+incompatible/go.mod h1:E3ru+11k8xSBh+hMPgOLZmtrrCbhqsmaPHjLKYnJCaQ=
 github.com/go-playground/assert/v2 v2.0.1/go.mod h1:VDjEfimB/XKnb+ZQfWdccd7VUvScMdVu0Titje2rxJ4=

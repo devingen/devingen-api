@@ -21,7 +21,7 @@ func (service DatabaseService) FindProductsOfUser(base, userId string) ([]*model
 	result := make([]*model.Product, 0)
 	query := bson.M{"workspace._id": bson.M{"$in": workspaceIds}}
 
-	err = service.Database.Query(base, model.CollectionProducts, query, func(cur *mongo.Cursor) error {
+	err = service.Database.Query(base, model.CollectionProducts, query, 0, func(cur *mongo.Cursor) error {
 		var data model.Product
 		err := cur.Decode(&data)
 		if err != nil {

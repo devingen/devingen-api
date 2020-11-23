@@ -16,7 +16,7 @@ func (service DatabaseService) FindWorkspaceWithId(base, id string) (*model.Work
 	}
 	query := bson.M{"_id": mId}
 
-	err := service.Database.Query(base, model.CollectionWorkspaces, query, func(cur *mongo.Cursor) error {
+	err := service.Database.Query(base, model.CollectionWorkspaces, query, 0, func(cur *mongo.Cursor) error {
 
 		var data model.Workspace
 		err := cur.Decode(&data)

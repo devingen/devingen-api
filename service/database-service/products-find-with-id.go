@@ -16,7 +16,7 @@ func (service DatabaseService) FindProductWithId(base, id string) (*model.Produc
 	}
 	query := bson.M{"_id": mId}
 
-	err := service.Database.Query(base, model.CollectionProducts, query, func(cur *mongo.Cursor) error {
+	err := service.Database.Query(base, model.CollectionProducts, query, 0, func(cur *mongo.Cursor) error {
 		var data model.Product
 		err := cur.Decode(&data)
 		if err != nil {
